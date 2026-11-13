@@ -153,7 +153,7 @@ HINTS = {
     42001: "token 过期。重跑一次会自动刷新。",
     40125: "AppSecret 不正确。",
     40243: "AppSecret 已被冻结，去开发者平台解冻。",
-    48001: "该账号没有此接口权限。先查开发者平台「接口权限与额度」，再决定是否改走浏览器自动化。",
+    48001: "该账号没有此接口权限。个人主体账号没有发布接口权限，草稿箱接口不受影响；如需发布请到公众号后台手动点击。",
     45009: "当日调用额度用尽。",
     45011: "分钟级限频，稍等再试。",
     50004: "该账号禁止使用 token 接口。",
@@ -322,7 +322,7 @@ def do_check(cfg: dict) -> int:
 
     data = _http(f"{API_BASE}/cgi-bin/draft/count?access_token={urllib.parse.quote(token)}")
     print(f"✓ draft/count 调用成功，当前草稿总数：{data.get('total_count', data)}")
-    print("\n结论：本账号可以调用草稿箱接口，路线 A 可用。")
+    print("\n结论：本机凭证与出口 IP 均可用，草稿箱接口正常。")
     return 0
 
 
