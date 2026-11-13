@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "wechat-mp": {
+      "command": "python3",
+      "args": ["-m", "wxmp"],
+      "cwd": "/absolute/path/to/wechat-mp-mcp",
+      "env": {
+        "WECHAT_MP_APPID": "wx0000000000000000",
+        "WECHAT_MP_APPSECRET": "your_app_secret_here"
+      }
+    }
+  }
+}

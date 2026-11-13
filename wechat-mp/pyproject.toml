@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wechat-mp"
+version = "0.1.0"
+description = "Minimal MCP server that pushes articles into a WeChat Official Account draft box (drafts only, never publishes)."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = []
+
+[project.optional-dependencies]
+markdown = ["markdown>=3.5"]
+
+[project.scripts]
+wechat-mp = "wxmp.server:main"
+
+[tool.setuptools]
+packages = ["wxmp"]
